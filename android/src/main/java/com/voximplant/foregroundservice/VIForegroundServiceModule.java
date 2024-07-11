@@ -115,7 +115,7 @@ public class VIForegroundServiceModule extends ReactContextBaseJavaModule implem
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(FOREGROUND_SERVICE_BUTTON_PRESSED);
-        getReactApplicationContext().registerReceiver(foregroundReceiver, filter);
+        getReactApplicationContext().registerReceiver(foregroundReceiver, filter, android.content.Context.RECEIVER_NOT_EXPORTED);
 
         if (componentName != null) {
             promise.resolve(null);
